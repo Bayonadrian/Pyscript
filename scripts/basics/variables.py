@@ -1,6 +1,6 @@
 class variables:
 
-    def var(self, **kwargs):
+    def var(self, **kwargs) -> str:
 
         if len(kwargs) == 1:
 
@@ -22,7 +22,7 @@ class variables:
 
             raise Exception('Too much parameters')
 
-    def let(self, **kwargs):
+    def let(self, **kwargs) -> str:
 
         if len(kwargs) == 1:
 
@@ -44,7 +44,7 @@ class variables:
 
             raise Exception('Too much parameters')
 
-    def const(self, **kwargs):
+    def const(self, **kwargs)-> str:
 
         if len(kwargs) == 1:
 

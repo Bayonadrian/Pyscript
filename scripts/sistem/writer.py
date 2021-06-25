@@ -1,4 +1,4 @@
-def writer(name, *args):
+def writer(name, *args) -> None:
 
     with open('{name}.js'.format(name= name), 'w') as writer:
 

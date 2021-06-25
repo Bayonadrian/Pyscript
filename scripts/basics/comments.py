@@ -1,5 +1,5 @@
 class comments:
 
-    def doComment(self, comment):
+    def doComment(self, comment: str) -> str:
 
         return '// {comment}'.format(comment= comment)
