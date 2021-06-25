@@ -1,13 +1,67 @@
 class variables:
 
-    def var(self, name, value):
+    def var(self, **kwargs):
 
-        return 'var {name} = {value}'.format(name= name, value= value)
+        if len(kwargs) == 1:
 
-    def let(self, name, value):
+            args = kwargs.items()
 
-        return 'let {name} = {value}'.format(name= name, value= value)
+            args = tuple(args)
 
-    def const(self, name, value):
+            name = args[0][0]
 
-        return 'const {name} = {value}'.format(name= name, value= value)
+            value = args[0][1]
+
+            return 'var {name} = {value};'.format(name= name, value= value)
+
+        elif len(kwargs) < 1:
+
+            raise Exception('Have to put a parameter')
+
+        else:
+
+            raise Exception('Too much parameters')
+
+    def let(self, **kwargs):
+
+        if len(kwargs) == 1:
+
+            args = kwargs.items()
+
+            args = tuple(args)
+
+            name = args[0][0]
+
+            value = args[0][1]
+
+            return 'let {name} = {value};'.format(name= name, value= value)
+        
+        elif len(kwargs) < 1:
+
+            raise Exception('Have to put a parameter')
+
+        else:
+
+            raise Exception('Too much parameters')
+
+    def const(self, **kwargs):
+
+        if len(kwargs) == 1:
+
+            args = kwargs.items()
+
+            args = tuple(args)
+
+            name = args[0][0]
+
+            value = args[0][1]
+
+            return 'const {name} = {value};'.format(name= name, value= value)
+
+        elif len(kwargs) < 1:
+
+            raise Exception('Have to put a parameter')
+
+        else:
+
+            raise Exception('Too much parameters')
