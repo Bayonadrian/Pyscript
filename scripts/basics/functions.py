@@ -18,7 +18,7 @@ class functions:
 
         for i in self.body:
 
-            body = body + '     ' + i + '\n'
+            body = body + '     ' + i + ';' + '\n'
 
         start = start.replace("'", '')
 

@@ -2,6 +2,7 @@ import unittest
 from scripts.basics.variables import variables
 from scripts.basics.comments import comments
 from scripts.basics.functions import functions
+from scripts.basics.objects import doJson
 
 class TestVariables(unittest.TestCase, variables):
 
@@ -67,7 +68,13 @@ class TestFunctions(unittest.TestCase, functions):
     def test_func(self):
 
         self.assertEqual('''function fun(uno, dos){
-     var uno = 1
-     var dos = 2
-     return uno + dos
+     var uno = 1;
+     var dos = 2;
+     return uno + dos;
 }''', self.fun.func())
+
+class TestObjects(unittest.TestCase):
+
+    def test_doJson(self):
+
+        self.assertEqual('{"uno": 1, "dos": 2, "tres": [1, 2, 3]}', doJson({'uno': 1, 'dos': 2, 'tres': [1, 2, 3]}))        
